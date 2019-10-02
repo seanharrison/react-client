@@ -18,7 +18,8 @@ function App() {
         >
           Learn React
         </a>
-        or go home
+        or go home.
+        Changed on feature.
       </header>
     </div>
   );
