@@ -7,3 +7,17 @@ before_install:
 
 script:
   - docker run -e CI=true react-client:tests npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "react-client"
+  env:  "ReactClient-env"
+  bucket_name: elasticbeanstalk-us-east-2-724672766714
+  bucket_path: "react-client"
+  on:
+    branch: master
+  access_key_id: 
+    secure: "$AWS_ACCESS_KEY"
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
